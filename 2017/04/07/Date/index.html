@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Date对象 | cherish</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Date对象用于处理日期和时间创建Date对象的语法 1234567891011121314var myDate = new Date(); //创建一个日期对象，可以传参，指定时间，如果不传，默认获取当前时间console.log(myDate); // Wed Feb 08 2017 10:54:04 GMT+0800 (CST)var myDate = new Date(148652244">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Date对象">
+<meta property="og:url" content="http://cherishxtt.com/2017/04/07/Date/index.html">
+<meta property="og:site_name" content="cherish">
+<meta property="og:description" content="Date对象用于处理日期和时间创建Date对象的语法 1234567891011121314var myDate = new Date(); //创建一个日期对象，可以传参，指定时间，如果不传，默认获取当前时间console.log(myDate); // Wed Feb 08 2017 10:54:04 GMT+0800 (CST)var myDate = new Date(148652244">
+<meta property="og:updated_time" content="2017-04-07T05:21:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Date对象">
+<meta name="twitter:description" content="Date对象用于处理日期和时间创建Date对象的语法 1234567891011121314var myDate = new Date(); //创建一个日期对象，可以传参，指定时间，如果不传，默认获取当前时间console.log(myDate); // Wed Feb 08 2017 10:54:04 GMT+0800 (CST)var myDate = new Date(148652244">
+  
+    <link rel="alternate" href="/atom.xml" title="cherish" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">cherish</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cherishxtt.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Date" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/07/Date/" class="article-date">
+  <time datetime="2017-04-07T05:03:39.000Z" itemprop="datePublished">2017-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Date对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>Date对象用于处理日期和时间<br>创建Date对象的语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">//创建一个日期对象，可以传参，指定时间，如果不传，默认获取当前时间</span></div><div class="line"><span class="built_in">console</span>.log(myDate); <span class="comment">// Wed Feb 08 2017 10:54:04 GMT+0800 (CST)</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1486522444000</span>);</div><div class="line"><span class="built_in">console</span>.log(myDate); <span class="comment">// Wed Feb 08 2017 10:54:04 GMT+0800 (CST)</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'Feb 8,2017'</span>);</div><div class="line"><span class="built_in">console</span>.log(myDate); <span class="comment">// Wed Feb 08 2017 00:00:00 GMT+0800 (CST)</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2 8,2017'</span>);</div><div class="line"><span class="built_in">console</span>.log(myDate); <span class="comment">// Wed Feb 08 2017 00:00:00 GMT+0800 (CST)</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'Wed Feb 08 2017 10:54:04 GMT+0800'</span>);</div><div class="line"><span class="built_in">console</span>.log(myDate); <span class="comment">// Wed Feb 08 2017 10:54:04 GMT+0800 (CST)</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Date.parse()<br>Date.parse() 方法可解析一个日期时间字符串，并返回 1970/1/1 午夜距离该日期时间的毫秒数。<br>参数支持的格式：</p>
+<ol>
+<li>‘月／日／年’，如 2/8/2017</li>
+<li>‘英文月名 日 ，年’ ，如 Feb 8，2017</li>
+<li>‘英文星期几 英文月名 日 年 时：分：秒 时区’，如 Wed Feb 08 2017 10:54:04 GMT+0800</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Date</span>.parse(<span class="string">'2 8,2017'</span>);  <span class="comment">// 1486483200000</span></div><div class="line">   <span class="built_in">Date</span>.parse(<span class="string">'Feb 8,2017'</span>); <span class="comment">// 1486483200000</span></div><div class="line">   <span class="built_in">Date</span>.parse(<span class="string">'Wed Feb 08 2017 10:54:04 GMT+0800'</span>); <span class="comment">// 1486522444000</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Date.UTC()<br>Date.UTC()方法可根据世界时返回1970年1月1日到指定日期的毫秒数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Date</span>.UTC(year,month,day,hours,minutes,seconds,ms)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> d = <span class="built_in">Date</span>.UTC(<span class="number">2017</span>,<span class="number">2</span>,<span class="number">8</span>);</div><div class="line">   <span class="built_in">console</span>.log(d);  <span class="comment">//1488931200000</span></div></pre></td></tr></table></figure>
+<p><strong>注释</strong>：Date.parse()和 Date.UTC()的区别<br>Date.parse()：接受一个字符串参数，如果可以转化，将转换为对应的毫秒数，否则返回 NaN；==以本地时间为参照==<br>Date.UTC()：最少接受两个参数，分别表示年份和月份（0—11），其他的日期，小时(0-24)、分钟、秒，可以指定也可以不指定，不指定时默认为 0；==以格林尼治时间为参照==</p>
+<p>######Date()通用方法</p>
+</li>
+<li>toString()</li>
+<li>toLocaleString()</li>
+<li>valueOf()<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">   <span class="built_in">console</span>.log(myDate); <span class="comment">////Wed Feb 08 2017 14:14:26 GMT+0800 (CST)</span></div><div class="line">   <span class="built_in">console</span>.log(myDate.toString()); <span class="comment">//Wed Feb 08 2017 14:14:26 GMT+0800 (CST)</span></div><div class="line">   <span class="built_in">console</span>.log(myDate.toLocaleString()); <span class="comment">//2017/2/8 下午2:14:26</span></div><div class="line">   <span class="built_in">console</span>.log(myDate.valueOf()); <span class="comment">//1486534466308</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>######日期格式化方法</p>
+<ul>
+<li>toDateString()           ——以特定格式显示星期几，月，日和年</li>
+<li>toTimeString()           ——以特定格式显示时，分，秒和时区</li>
+<li>toLocaleDateString()     ——以特定地区格式显示星期几，月，日，年</li>
+<li>toLocaleTimeString()     ——以特定格式显示时，分，秒和时区</li>
+<li><p>toUTCString()            ——以特定格式显示完整的UTC日期</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">console</span>.log(myDate); <span class="comment">//Wed Feb 08 2017 14:22:46 GMT+0800 (CST)</span></div><div class="line"><span class="built_in">console</span>.log(myDate.toDateString()); <span class="comment">//Wed Feb 08 2017</span></div><div class="line"><span class="built_in">console</span>.log(myDate.toTimeString()); <span class="comment">//14:22:46 GMT+0800 (CST)</span></div><div class="line"><span class="built_in">console</span>.log(myDate.toLocaleDateString()); <span class="comment">//2017/2/8</span></div><div class="line"><span class="built_in">console</span>.log(myDate.toLocaleTimeString()); <span class="comment">//下午2:22:46</span></div><div class="line"><span class="built_in">console</span>.log(myDate.toUTCString()); <span class="comment">//Wed, 08 Feb 2017 06:22:46 GMT</span></div></pre></td></tr></table></figure>
+<p>#######组件方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">console</span>.log(myDate);  <span class="comment">//Wed Feb 08 2017 14:38:06 GMT+0800 (CST)</span></div><div class="line"><span class="built_in">console</span>.log(myDate.getMonth()+ <span class="number">1</span>); <span class="comment">//2</span></div><div class="line">myDate.setMonth(<span class="number">2</span>);</div><div class="line"><span class="built_in">console</span>.log(myDate.getMonth()+<span class="number">1</span>);  <span class="comment">//3</span></div><div class="line"><span class="built_in">console</span>.log(myDate.getTime()); <span class="comment">//1488955696934</span></div><div class="line">myDate.setTime(<span class="number">100</span>);<span class="comment">//会改变整个日期</span></div><div class="line"><span class="built_in">console</span>.log(myDate.getTime());  <span class="comment">//100</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">console</span>.log(myDate.getFullYear()); <span class="comment">//2017</span></div><div class="line">myDate.setFullYear(<span class="number">2018</span>);</div><div class="line"><span class="built_in">console</span>.log(myDate.getFullYear()); <span class="comment">//2018</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">console</span>.log(myDate.getDate()); <span class="comment">//8</span></div><div class="line">myDate.setDate(<span class="number">9</span>);</div><div class="line"><span class="built_in">console</span>.log(myDate.getDate()); <span class="comment">//9</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">console</span>.log(myDate.getDay()); <span class="comment">//3--星期3</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">console</span>.log(myDate); <span class="comment">//Wed Feb 08 2017 15:24:01 GMT+0800 (CST)</span></div><div class="line"><span class="built_in">console</span>.log(myDate.getHours()); <span class="comment">//15</span></div><div class="line">myDate.setHours(<span class="number">16</span>);</div><div class="line"><span class="built_in">console</span>.log(myDate.getHours()); <span class="comment">//16</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">console</span>.log(myDate); <span class="comment">//Wed Feb 08 2017 15:24:01 GMT+0800 (CST)</span></div><div class="line"><span class="built_in">console</span>.log(myDate.getMinutes()); <span class="comment">//24</span></div><div class="line"><span class="built_in">console</span>.log(myDate.getSeconds()); <span class="comment">//1</span></div><div class="line"><span class="built_in">console</span>.log(myDate.getMilliseconds()); <span class="comment">//863</span></div><div class="line"><span class="built_in">console</span>.log(myDate.getTimezoneOffset());<span class="number">-480</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">console</span>.log(myDate); <span class="comment">//Wed Feb 08 2017 15:31:56 GMT+0800 (CST)</span></div><div class="line"><span class="built_in">console</span>.log(myDate.getHours());   <span class="comment">//15</span></div><div class="line"><span class="built_in">console</span>.log(myDate.getUTCHours());  <span class="comment">//7</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="keyword">var</span> date = myDate.getFullYear()+ <span class="string">'-'</span>+(myDate.getMonth()+<span class="number">1</span>)+<span class="string">'-'</span>+myDate.getDate()+<span class="string">''</span>+myDate.getHours()+<span class="string">':'</span>+myDate.getMinutes()+<span class="string">':'</span>+myDate.getSeconds();</div><div class="line"><span class="built_in">console</span>.log(date);</div><div class="line"><span class="built_in">console</span>.log(date); <span class="comment">//2017-2-8 15:36:18</span></div></pre></td></tr></table></figure>
+<p>ps:以上方法除了getTime(),setTime(),getTimezoneOffset(),其他都具有UTC功能，例如setDate()及getDate(),那么就有setUTCDate()及getUTCDate()</p>
+<p><strong>时间戳转换</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">    <span class="comment">/**</span></div><div class="line">     * 时间戳格式转化为 yy-mm-dd</div><div class="line">     * @return &#123;String&#125; 2016-6-23</div><div class="line">     */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFormatDate</span>(<span class="params">ts</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(ts);</div><div class="line">    <span class="keyword">var</span> monthnum = date.getMonth();</div><div class="line">    <span class="keyword">var</span> daynum = date.getDate();</div><div class="line">    <span class="keyword">return</span> date.getFullYear() + <span class="string">'-'</span> + ((monthnum + <span class="number">1</span>) &lt; <span class="number">10</span> ? <span class="string">'0'</span> + (monthnum + <span class="number">1</span>) : +(monthnum + <span class="number">1</span>)) + <span class="string">'-'</span> + ((daynum &lt; <span class="number">10</span>) ? <span class="string">'0'</span> + daynum : daynum);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 时间戳格式转化为 yy-mm-dd hh:mm</div><div class="line">     * @return &#123;String&#125; 2016-6-23 22:22</div><div class="line">     */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFormatTime</span>(<span class="params">ts</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(ts);</div><div class="line">    <span class="keyword">var</span> hournum = date.getHours() + <span class="string">':'</span>;</div><div class="line">    <span class="keyword">var</span> minnum = (date.getMinutes() &lt; <span class="number">10</span> ? <span class="string">'0'</span> + date.getMinutes() : date.getMinutes())+ <span class="string">':'</span>;</div><div class="line">    <span class="keyword">var</span> secnum = date.getSeconds() &lt; <span class="number">10</span> ? <span class="string">'0'</span> + date.getSeconds() : date.getSeconds();</div><div class="line">    <span class="keyword">var</span> time = getFormatDate(ts) + <span class="string">' '</span> + hournum + minnum + secnum;</div><div class="line">    <span class="keyword">return</span> time;</div><div class="line">&#125;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">  <span class="keyword">var</span> nowDate = getFormatDate(myDate);</div><div class="line">  <span class="keyword">var</span> nowTime = getFormatTime(myDate);</div><div class="line">  <span class="built_in">console</span>.log(nowDate); <span class="comment">//2017-02-09</span></div><div class="line">  <span class="built_in">console</span>.log(nowTime); <span class="comment">//2017-02-09 10:21:48</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cherishxtt.com/2017/04/07/Date/" data-id="cj17gyuri0002er3j764odjxb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/07/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/07/swiper/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">swiper</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Arkiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Siste innlegg</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/04/07/swiper/">swiper</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/07/Date/">Date对象</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/07/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 xutingting<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
