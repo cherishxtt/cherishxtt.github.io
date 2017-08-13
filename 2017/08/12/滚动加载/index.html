@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="svg的概念SVG 指可伸缩矢量图形 (Scalable Vector Graphics) svg的优势文件体积小，能够被大量的压缩图片可无限放大而不失真(矢量图的基本特征)在视网膜显示屏上效果极佳能够实现互动和滤镜效果 svg形状 矩形   (x, y, width, height) 圆形   (cx, cy, r) 椭圆   (cx, cy, rx, ry) 线   (x1, y1, x2,">
+<meta name="description" content="实现滚动加载实现结果：滚动条滚动到底部的时候，加载新的数据 需要获取的参数：1.容器的可视区域，elHeight/2.容器的可视区域高度+滚动的高度,scrollHeight3.滚动条距离容器顶部的高度，scrollTop 滚动到底部的判断条件123if(scrollHeight - elHeight - scrollTop === 0)&amp;#123;    //滚动到底部&amp;#125; 小demo1">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="svg基础属性">
-<meta property="og:url" content="http://cherishxtt.com/2017/06/13/svg基础属性/index.html">
+<meta property="og:title" content="滚动加载">
+<meta property="og:url" content="http://cherishxtt.com/2017/08/12/滚动加载/index.html">
 <meta property="og:site_name" content="cherish">
-<meta property="og:description" content="svg的概念SVG 指可伸缩矢量图形 (Scalable Vector Graphics) svg的优势文件体积小，能够被大量的压缩图片可无限放大而不失真(矢量图的基本特征)在视网膜显示屏上效果极佳能够实现互动和滤镜效果 svg形状 矩形   (x, y, width, height) 圆形   (cx, cy, r) 椭圆   (cx, cy, rx, ry) 线   (x1, y1, x2,">
-<meta property="og:updated_time" content="2017-06-16T08:07:20.000Z">
+<meta property="og:description" content="实现滚动加载实现结果：滚动条滚动到底部的时候，加载新的数据 需要获取的参数：1.容器的可视区域，elHeight/2.容器的可视区域高度+滚动的高度,scrollHeight3.滚动条距离容器顶部的高度，scrollTop 滚动到底部的判断条件123if(scrollHeight - elHeight - scrollTop === 0)&amp;#123;    //滚动到底部&amp;#125; 小demo1">
+<meta property="og:updated_time" content="2017-08-13T04:58:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="svg基础属性">
-<meta name="twitter:description" content="svg的概念SVG 指可伸缩矢量图形 (Scalable Vector Graphics) svg的优势文件体积小，能够被大量的压缩图片可无限放大而不失真(矢量图的基本特征)在视网膜显示屏上效果极佳能够实现互动和滤镜效果 svg形状 矩形   (x, y, width, height) 圆形   (cx, cy, r) 椭圆   (cx, cy, rx, ry) 线   (x1, y1, x2,">
+<meta name="twitter:title" content="滚动加载">
+<meta name="twitter:description" content="实现滚动加载实现结果：滚动条滚动到底部的时候，加载新的数据 需要获取的参数：1.容器的可视区域，elHeight/2.容器的可视区域高度+滚动的高度,scrollHeight3.滚动条距离容器顶部的高度，scrollTop 滚动到底部的判断条件123if(scrollHeight - elHeight - scrollTop === 0)&amp;#123;    //滚动到底部&amp;#125; 小demo1">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://cherishxtt.com/2017/06/13/svg基础属性/"/>
+  <link rel="canonical" href="http://cherishxtt.com/2017/08/12/滚动加载/"/>
 
 
 
 
 
-  <title> svg基础属性 | cherish </title>
+  <title> 滚动加载 | cherish </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -240,7 +240,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherishxtt.com/2017/06/13/svg基础属性/">
+    <link itemprop="mainEntityOfPage" href="http://cherishxtt.com/2017/08/12/滚动加载/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="cherish">
@@ -261,7 +261,7 @@
             
             
               
-                svg基础属性
+                滚动加载
               
             
           </h1>
@@ -276,8 +276,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-13T15:51:43+08:00">
-                2017-06-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-12T11:47:37+08:00">
+                2017-08-12
               </time>
             
 
@@ -312,29 +312,11 @@
       
 
       
-        <h4 id="svg的概念"><a href="#svg的概念" class="headerlink" title="svg的概念"></a>svg的概念</h4><p>SVG 指可伸缩矢量图形 (Scalable Vector Graphics)</p>
-<h4 id="svg的优势"><a href="#svg的优势" class="headerlink" title="svg的优势"></a>svg的优势</h4><p>文件体积小，能够被大量的压缩<br>图片可无限放大而不失真(矢量图的基本特征)<br>在视网膜显示屏上效果极佳<br>能够实现互动和滤镜效果</p>
-<h4 id="svg形状"><a href="#svg形状" class="headerlink" title="svg形状"></a>svg形状</h4><ul>
-<li>矩形 <rect></rect>  (x, y, width, height)</li>
-<li>圆形 <circle></circle>  (cx, cy, r)</li>
-<li>椭圆 <ellipse></ellipse>  (cx, cy, rx, ry)</li>
-<li>线 <line></line>  (x1, y1, x2, y2)</li>
-<li>折线 <polyline></polyline>  (points)</li>
-<li>多边形 <polygon></polygon>  (points)</li>
-<li>路径 <path></path>  (M, L, Z)</li>
-</ul>
-<h4 id="svg用法"><a href="#svg用法" class="headerlink" title="svg用法"></a>svg用法</h4><ul>
-<li>直接把它放到img标记里。</li>
-<li>在背景图(background-image)中使用svg。</li>
-<li>“inline” svg的用法,直接粘贴到HTML里使用。</li>
-<li>svg对象(object)的用法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;object type=&quot;image/svg+xml&quot; data=&quot;kiwi.svg&quot; class=&quot;logo&quot;&gt;&lt;/object&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="svg动画"><a href="#svg动画" class="headerlink" title="svg动画"></a>svg动画</h4><ul>
-<li><a href="http://www.html5tricks.com/demo/html5-svg-fox-run-animation/index.html" target="_blank" rel="external">🐯</a></li>
-<li><a href="http://www.html5tricks.com/demo/pure-css3-elephant-animation/index.html" target="_blank" rel="external">🐘</a></li>
-<li><a href="http://www.html5tricks.com/demo/html5-svg-shanche-animation/index.html" target="_blank" rel="external">过山车</a></li>
-</ul>
+        <h5 id="实现滚动加载"><a href="#实现滚动加载" class="headerlink" title="实现滚动加载"></a>实现滚动加载</h5><p>实现结果：滚动条滚动到底部的时候，加载新的数据</p>
+<p><strong>需要获取的参数：</strong><br>1.容器的可视区域，elHeight/<br>2.容器的可视区域高度+滚动的高度,scrollHeight<br>3.滚动条距离容器顶部的高度，scrollTop</p>
+<p><strong>滚动到底部的判断条件</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(scrollHeight - elHeight - scrollTop === <span class="number">0</span>)&#123;</div><div class="line">    <span class="comment">//滚动到底部</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>小demo</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">data:&#123;</div><div class="line">    <span class="attr">flag</span>:<span class="literal">true</span>   <span class="comment">//防止滚动一次发送多次请求</span></div><div class="line">&#125;,</div><div class="line"><span class="attr">methods</span>:&#123;</div><div class="line">    scrollMenu()&#123;</div><div class="line">        <span class="keyword">var</span> scrollTop = <span class="built_in">document</span>.getElementById(<span class="string">'test'</span>).scrollTop;</div><div class="line">        <span class="keyword">var</span> _scroll = <span class="built_in">document</span>.getElementById(<span class="string">'test'</span>).scrollHeight;</div><div class="line">        <span class="keyword">var</span> elHeight = <span class="number">300</span>;  <span class="comment">//容器高度</span></div><div class="line">        <span class="keyword">if</span>(scrollHeight - elHeight - scrollTop === <span class="number">0</span>)&#123;</div><div class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>.flag)&#123;</div><div class="line">                <span class="keyword">this</span>.postAjax()</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    postAjax()&#123;</div><div class="line">        <span class="keyword">var</span> that = <span class="keyword">this</span></div><div class="line">        that.flag = <span class="literal">false</span>    <span class="comment">//请求发送前</span></div><div class="line">        $.post(url,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            that.flag = <span class="literal">true</span>    <span class="comment">//请求发送成功后</span></div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;,</div><div class="line">mounted()&#123;</div><div class="line"> <span class="comment">//监听滚动事件</span></div><div class="line">      <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">'test'</span>).addEventListener(<span class="string">'scroll'</span>,            <span class="keyword">this</span>.scrollMenu)</div><div class="line">      &#125;)</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>*上面是针对某个固定的容器，若是整个页面的话，只需修改判断参数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).height()  <span class="comment">//是获取整个页面的高度</span></div><div class="line">$(<span class="built_in">window</span>).height()  <span class="comment">//是获取当前也就是浏览器所能看到的页面的那部分的高度。这个大小在你缩放浏览器窗口大小时会改变，与document是不一样的</span></div><div class="line">$(<span class="built_in">document</span>).scrollTop()   <span class="comment">//滚动条距离顶部的距离</span></div><div class="line"></div><div class="line">判断条件</div><div class="line"><span class="keyword">if</span>($(<span class="built_in">document</span>).height() - $(<span class="built_in">window</span>).height() - $(<span class="built_in">document</span>).scrollTop() === <span class="number">0</span>)&#123;</div><div class="line">    <span class="comment">// 滚动到底部</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -371,18 +353,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/19/类型检测/" rel="next" title="类型检测">
-                <i class="fa fa-chevron-left"></i> 类型检测
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/07/swiper/" rel="prev" title="swiper">
-                swiper <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/19/类型检测/" rel="prev" title="类型检测">
+                类型检测 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -494,7 +472,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#svg的概念"><span class="nav-number">1.</span> <span class="nav-text">svg的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#svg的优势"><span class="nav-number">2.</span> <span class="nav-text">svg的优势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#svg形状"><span class="nav-number">3.</span> <span class="nav-text">svg形状</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#svg用法"><span class="nav-number">4.</span> <span class="nav-text">svg用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#svg动画"><span class="nav-number">5.</span> <span class="nav-text">svg动画</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#实现滚动加载"><span class="nav-number">1.</span> <span class="nav-text">实现滚动加载</span></a></li></ol></div>
             
 
           </div>
