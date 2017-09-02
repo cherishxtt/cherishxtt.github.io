@@ -1,0 +1,718 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="AJAX ajax不是某种编程语言，是一种在无需重新加载整个网页的情况之下能够更新部分网页的技术。 需掌握的技术：html，js，css 同步，异步(XMLHttpRequest) 运用html和css来实现页面，表达信息； 运用XMLHttpRequest和web服务器进行数据的异步交换; 运用javascript操作dom，实现动态局部刷新；  XMLHttpRequest对象（xhr）创建一">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax">
+<meta property="og:url" content="http://cherishxtt.com/2017/09/02/ajax/index.html">
+<meta property="og:site_name" content="cherish">
+<meta property="og:description" content="AJAX ajax不是某种编程语言，是一种在无需重新加载整个网页的情况之下能够更新部分网页的技术。 需掌握的技术：html，js，css 同步，异步(XMLHttpRequest) 运用html和css来实现页面，表达信息； 运用XMLHttpRequest和web服务器进行数据的异步交换; 运用javascript操作dom，实现动态局部刷新；  XMLHttpRequest对象（xhr）创建一">
+<meta property="og:updated_time" content="2017-09-02T13:48:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ajax">
+<meta name="twitter:description" content="AJAX ajax不是某种编程语言，是一种在无需重新加载整个网页的情况之下能够更新部分网页的技术。 需掌握的技术：html，js，css 同步，异步(XMLHttpRequest) 运用html和css来实现页面，表达信息； 运用XMLHttpRequest和web服务器进行数据的异步交换; 运用javascript操作dom，实现动态局部刷新；  XMLHttpRequest对象（xhr）创建一">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cherishxtt.com/2017/09/02/ajax/"/>
+
+
+
+
+
+  <title> ajax | cherish </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">cherish</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cherishxtt.com/2017/09/02/ajax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="cherish">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ooo.0o0.ooo/2017/06/13/593f64899e453.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cherish">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ajax
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-02T21:23:52+08:00">
+                2017-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h4><ul>
+<li>ajax不是某种编程语言，是一种在无需重新加载整个网页的情况之下能够更新部分网页的技术。</li>
+<li>需掌握的技术：html，js，css</li>
+<li>同步，异步(XMLHttpRequest)</li>
+<li>运用html和css来实现页面，表达信息；</li>
+<li>运用XMLHttpRequest和web服务器进行数据的异步交换;</li>
+<li>运用javascript操作dom，实现动态局部刷新；</li>
+</ul>
+<h5 id="XMLHttpRequest对象（xhr）"><a href="#XMLHttpRequest对象（xhr）" class="headerlink" title="XMLHttpRequest对象（xhr）"></a>XMLHttpRequest对象（xhr）</h5><p>创建一个xhr对象<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> request;</div><div class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</div><div class="line">request = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">request = <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>); <span class="comment">//IE5,IE6</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="http请求"><a href="#http请求" class="headerlink" title="http请求"></a>http请求</h4><h5 id="什么是http"><a href="#什么是http" class="headerlink" title="什么是http"></a>什么是http</h5><p>http是计算机通过网络进行通信的规则，是一种无状态协议(指不建立持久的连接，就是服务端不保留连接的相关信息)</p>
+<p>==一个完整的http请求过程，通常有下面7个步骤==<br>1.建立TCP连接<br>2.web浏览器web服务器发送请求命令<br>3.web浏览器发送请求头信息<br>4.web服务器应答<br>5.web服务器发送应答头信息<br>6.web服务器向浏览器发送数据<br>7.web服务器关闭TCP连接</p>
+<p>==一个http请求一般由四部分组成==</p>
+<ol>
+<li>http请求的方法或动作，比如get还是post请求</li>
+<li>正在请求的URL，总得知道请求的地址是什么</li>
+<li>请求头，包含一些客户端环境信息，身份验证信息等</li>
+<li>请求体，也就是请求正文，请求正文中可以包含客户提交的查询字符串信息，表单信息等等</li>
+</ol>
+<h5 id="get和post"><a href="#get和post" class="headerlink" title="get和post"></a>get和post</h5><p>get：一般用与信息获取，使用url传递参数，对所发送信息的数量也有限制，一般在2000个字符左右<br>post：一般用于修改服务器上的资源，对所发送信息的数量无限制</p>
+<p>==一个http响应一般由三部分组成：==<br>1.一个数字和文字组成的状态码，用来显示请求是成功还是失败<br>2.响应头，响应头也和请求头一样包含许多有用的信息，例如服务器类型，日期时间，内容类型和长度等<br>3.响应体，也就是响应正文</p>
+<p>==http状态码由3位数字构成，其中首位数字定义了状态码的类型：==</p>
+<ul>
+<li>1XX：信息类，表示收到web浏览器请求，正在进一步处理中</li>
+<li>2XX：成功，表示用户请求被正确接收,理解和处理，例如200 ok</li>
+<li>3XX:重定向，表示请求没有成功，客户必须采取进一步动作</li>
+<li>4XX：客户端错误，表示客户端提交的请求有错误，例如 404 not found，意味着请求中所引用的文档不存在</li>
+<li>5XX：服务器错误，表示服务器不饿能完成对请求的处理，例如500</li>
+</ul>
+<p>==XMLHttpRequest发送请求(两个方法)==</p>
+<ul>
+<li>open(method,url,async) method：get/post   url:请求地址   async：异步／同步</li>
+<li>send(string)   get不需要传递send，post需要传递send</li>
+</ul>
+<p>==XMLHttpRequest取得 响应==</p>
+<ul>
+<li>responseText：获得字符串形式的响应数据</li>
+<li>responseXML：获得XML形式的响应数据</li>
+<li>status和ststuaText：以数字和文本形式返回HTTP状态码</li>
+<li>getAllResponseHeader():获取所有的响应报头</li>
+<li>getResponseHeader():查询响应中的某个字段的值</li>
+<li>readyState属性：<br>0:请求未初始化，open还没调用；<br>1:服务器连接已建立，open已经调用；<br>2:请求已接收，也就是接收到头信息了<br>3:请求处理中，也就是接收到响应主体了<br>4:请求已完成，且响应已就绪，也就是响应完成了<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> request = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">reauest.open(<span class="string">'GET'</span>,<span class="string">'get.php'</span>,<span class="literal">true</span>);</div><div class="line">request.send();</div><div class="line">request.onreadyststechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(erquest.readyState === <span class="number">4</span> &amp;&amp; request.status === <span class="number">200</span>)&#123;</div><div class="line">        <span class="comment">//请求成功  request.responseText</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="JSON基本概念"><a href="#JSON基本概念" class="headerlink" title="JSON基本概念"></a>JSON基本概念</h5><ul>
+<li>JSON：javascript对象表示法（JavaScript Object Notation）</li>
+<li>JSON是存储和交换文本信息的语法，类似XML。它采用键值对的方式来组织，易于阅读和编写，同时也易于机器解析和生成</li>
+<li>JSON是独立于语言的，也就是说不管什么语言，都可以解析json，只需要按照json的规则来就行</li>
+</ul>
+<h5 id="json和xml的区别"><a href="#json和xml的区别" class="headerlink" title="json和xml的区别"></a>json和xml的区别</h5><ul>
+<li>json的长度和xml格式比起来很短小</li>
+<li>json读写的速度更快</li>
+<li>json可以使用javascript内建的方法直接进行解析，转换成javascript对象，非常方便</li>
+</ul>
+<h5 id="json语法规则"><a href="#json语法规则" class="headerlink" title="json语法规则"></a>json语法规则</h5><ul>
+<li>json数据的书写格式是：名称／值对 ，必须加引号（例如：”name”:”cherish”），</li>
+<li>json的值可以是下面这些类型：数字，字符串，逻辑值，数组，对象，null</li>
+<li>json解析：eval和JSON.parse</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var jsonData = '&#123;</div><div class="line">    "staff":[</div><div class="line">        &#123;"name":"张三","age":"18"&#125;,</div><div class="line">        &#123;"name":"李四","age":"19"&#125;,</div><div class="line">        &#123;"name":"王五","age":"20"&#125;</div><div class="line">    ]</div><div class="line">&#125;';</div><div class="line">var jsonObj = JSON.parse(jsonData);</div><div class="line">console.log(jsonObj.staff[0].name);     //张三</div><div class="line"></div><div class="line">var jsonObj1 = eval('(' + jsonData + ')');</div><div class="line">console.log(jsonObj.staff[0].name);     //张三</div></pre></td></tr></table></figure>
+<p> 注释：eval不能检测json中的语法错误</p>
+<h5 id="用jquery实现Ajax"><a href="#用jquery实现Ajax" class="headerlink" title="用jquery实现Ajax"></a>用jquery实现Ajax</h5><ul>
+<li>type：类型，’post’或’get’，默认’get’</li>
+<li>url:发送请求的地址</li>
+<li>data：是一个对象，连同请求发送到服务器的数据</li>
+<li>dataType：预期服务器返回的数据类型，如果不指定，jquery将自动根据Http包MIME信息来智能判断，一般我们采用json格式，可以设置为”json”</li>
+<li>success:是一个方法，请求成功后的回调函数，传日返回后的数据，以及包含成功代码的字符串</li>
+<li>error：是一个方法，请求失败时调用此函数，传入XMLHttpRequest对象</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/15/deepCopy/" rel="prev" title="浅谈深拷贝与浅拷贝">
+                浅谈深拷贝与浅拷贝 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ooo.0o0.ooo/2017/06/13/593f64899e453.jpeg"
+               alt="cherish" />
+          <p class="site-author-name" itemprop="name">cherish</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#AJAX"><span class="nav-number">1.</span> <span class="nav-text">AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#XMLHttpRequest对象（xhr）"><span class="nav-number">1.1.</span> <span class="nav-text">XMLHttpRequest对象（xhr）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http请求"><span class="nav-number">2.</span> <span class="nav-text">http请求</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是http"><span class="nav-number">2.1.</span> <span class="nav-text">什么是http</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#get和post"><span class="nav-number">2.2.</span> <span class="nav-text">get和post</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JSON基本概念"><span class="nav-number">2.3.</span> <span class="nav-text">JSON基本概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#json和xml的区别"><span class="nav-number">2.4.</span> <span class="nav-text">json和xml的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#json语法规则"><span class="nav-number">2.5.</span> <span class="nav-text">json语法规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用jquery实现Ajax"><span class="nav-number">2.6.</span> <span class="nav-text">用jquery实现Ajax</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cherish</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
