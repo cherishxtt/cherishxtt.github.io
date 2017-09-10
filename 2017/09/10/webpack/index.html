@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="webpack 初探（一）什么是webpack？Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。安装webpack  在你指定的目录下新建一个文件夹  1mkdir webpack-test  npm init初始化该文件夹，输入该命令之后终端会让你输入一系列信息，这些信息无所谓，可写可不写，直接回车就欧啦，初始化之">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 新建文章">
-<meta property="og:url" content="http://cherishxtt.com/2017/04/07/hexoCreate/index.html">
+<meta property="og:title" content="webpack">
+<meta property="og:url" content="http://cherishxtt.com/2017/09/10/webpack/index.html">
 <meta property="og:site_name" content="cherish">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-08-15T10:23:13.000Z">
+<meta property="og:description" content="webpack 初探（一）什么是webpack？Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。安装webpack  在你指定的目录下新建一个文件夹  1mkdir webpack-test  npm init初始化该文件夹，输入该命令之后终端会让你输入一系列信息，这些信息无所谓，可写可不写，直接回车就欧啦，初始化之">
+<meta property="og:updated_time" content="2017-09-10T02:22:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo 新建文章">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="webpack">
+<meta name="twitter:description" content="webpack 初探（一）什么是webpack？Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。安装webpack  在你指定的目录下新建一个文件夹  1mkdir webpack-test  npm init初始化该文件夹，输入该命令之后终端会让你输入一系列信息，这些信息无所谓，可写可不写，直接回车就欧啦，初始化之">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://cherishxtt.com/2017/04/07/hexoCreate/"/>
+  <link rel="canonical" href="http://cherishxtt.com/2017/09/10/webpack/"/>
 
 
 
 
 
-  <title> hexo 新建文章 | cherish </title>
+  <title> webpack | cherish </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -240,7 +240,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherishxtt.com/2017/04/07/hexoCreate/">
+    <link itemprop="mainEntityOfPage" href="http://cherishxtt.com/2017/09/10/webpack/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="cherish">
@@ -261,7 +261,7 @@
             
             
               
-                hexo 新建文章
+                webpack
               
             
           </h1>
@@ -276,8 +276,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-07T10:54:12+08:00">
-                2017-04-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T10:22:00+08:00">
+                2017-09-10
               </time>
             
 
@@ -312,15 +312,27 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="创建一个新的文章"><a href="#创建一个新的文章" class="headerlink" title="创建一个新的文章"></a>创建一个新的文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new filename</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="文章文成之后，-执行’hexo-server’，可在本地看到新的文章"><a href="#文章文成之后，-执行’hexo-server’，可在本地看到新的文章" class="headerlink" title="文章文成之后， 执行’hexo server’，可在本地看到新的文章"></a>文章文成之后， 执行’hexo server’，可在本地看到新的文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="生成静态文件，可简写（hexo-g）"><a href="#生成静态文件，可简写（hexo-g）" class="headerlink" title="生成静态文件，可简写（hexo g）"></a>生成静态文件，可简写（hexo g）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="部署到远端，可简写（hexo-d），之后可以在你的博客中看到新写的文章啦"><a href="#部署到远端，可简写（hexo-d），之后可以在你的博客中看到新写的文章啦" class="headerlink" title="部署到远端，可简写（hexo d），之后可以在你的博客中看到新写的文章啦"></a>部署到远端，可简写（hexo d），之后可以在你的博客中看到新写的文章啦</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h5 id="webpack-初探（一）"><a href="#webpack-初探（一）" class="headerlink" title="webpack 初探（一）"></a>webpack 初探（一）</h5><p><strong>什么是webpack？</strong><br>Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。<br><strong>安装webpack</strong></p>
+<ul>
+<li><p>在你指定的目录下新建一个文件夹</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir webpack-test</div></pre></td></tr></table></figure>
+</li>
+<li><p>npm init初始化该文件夹，输入该命令之后终端会让你输入一系列信息，这些信息无所谓，可写可不写，直接回车就欧啦，初始化之后可以看到文件夹中多了一个package.json</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd webpack-test </div><div class="line">npm init</div></pre></td></tr></table></figure>
+</li>
+<li><p>接下来就是安装webpack了，webpack有两种安装方式，全局安装和安装到项目目录下，不过官方建议安装到项目目录下，这样有利于项目的维护</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//全局安装</span></div><div class="line">npm install -g webpack</div><div class="line"><span class="comment">//安装到你的项目目录</span></div><div class="line">npm install --save-dev webpack</div></pre></td></tr></table></figure>
+</li>
+<li><p>这样webpack就初步安装好了，接下来可以在项目中新建一些文件夹dist 放我们打包后的文件，src是我们写入的文件，在html文件中引入我们写好的js文件</p>
+</li>
+<li><p>接下来建立webpack配置文件 webpack.config.js</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fileDir = __dirname;</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="comment">// 入口文件</span></div><div class="line">    entry: &#123;</div><div class="line">        <span class="attr">main</span>: <span class="string">'./src/script/main.js'</span>,</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">output</span>: &#123;</div><div class="line">        <span class="comment">// 目标输出目录 path 的绝对路径。</span></div><div class="line">        path: path.resolve(fileDir, <span class="string">'./dist'</span>),</div><div class="line">        <span class="comment">// filename 用于输出文件的文件名</span></div><div class="line">        filename: <span class="string">'bundle.js'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> 注：“__dirname”是node.js中的一个全局变量，它指向当前执行脚本所在的目录。</p>
+</li>
+<li>执行打包命令  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webpack main.js bundle.js</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>此时就可以在dist里看到你打包好的bundle.js了～</p>
 
       
     </div>
@@ -357,15 +369,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/07/Date/" rel="next" title="Date对象">
-                <i class="fa fa-chevron-left"></i> Date对象
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/02/ajax/" rel="prev" title="ajax">
+                ajax <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -476,7 +488,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个新的文章"><span class="nav-number">1.1.</span> <span class="nav-text">创建一个新的文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章文成之后，-执行’hexo-server’，可在本地看到新的文章"><span class="nav-number">1.2.</span> <span class="nav-text">文章文成之后， 执行’hexo server’，可在本地看到新的文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成静态文件，可简写（hexo-g）"><span class="nav-number">1.3.</span> <span class="nav-text">生成静态文件，可简写（hexo g）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到远端，可简写（hexo-d），之后可以在你的博客中看到新写的文章啦"><span class="nav-number">1.4.</span> <span class="nav-text">部署到远端，可简写（hexo d），之后可以在你的博客中看到新写的文章啦</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#webpack-初探（一）"><span class="nav-number">1.</span> <span class="nav-text">webpack 初探（一）</span></a></li></ol></div>
             
 
           </div>
