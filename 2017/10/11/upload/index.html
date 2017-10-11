@@ -1,0 +1,658 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="上传图片最近项目改版，里面需要上传功能，原来一直依赖的是webupload，这次因为用的是vue，不想引入过多的插件，所以就使用了formdata来实现上传功能捧上html和vue部分代码，css就略过了。。。  html部分123456789101112// 上传按钮&amp;lt;form id=&amp;quot;form&amp;quot;&amp;gt;   &amp;lt;input type=&amp;quot;file&amp;quot">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue 上传功能">
+<meta property="og:url" content="http://cherishxtt.com/2017/10/11/upload/index.html">
+<meta property="og:site_name" content="cherish">
+<meta property="og:description" content="上传图片最近项目改版，里面需要上传功能，原来一直依赖的是webupload，这次因为用的是vue，不想引入过多的插件，所以就使用了formdata来实现上传功能捧上html和vue部分代码，css就略过了。。。  html部分123456789101112// 上传按钮&amp;lt;form id=&amp;quot;form&amp;quot;&amp;gt;   &amp;lt;input type=&amp;quot;file&amp;quot">
+<meta property="og:image" content="http://cherishxtt.com/images/upload1.jpg">
+<meta property="og:image" content="http://cherishxtt.com/images/upload2.jpg">
+<meta property="og:image" content="http://cherishxtt.com/images/upload3.jpg">
+<meta property="og:updated_time" content="2017-10-11T07:18:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue 上传功能">
+<meta name="twitter:description" content="上传图片最近项目改版，里面需要上传功能，原来一直依赖的是webupload，这次因为用的是vue，不想引入过多的插件，所以就使用了formdata来实现上传功能捧上html和vue部分代码，css就略过了。。。  html部分123456789101112// 上传按钮&amp;lt;form id=&amp;quot;form&amp;quot;&amp;gt;   &amp;lt;input type=&amp;quot;file&amp;quot">
+<meta name="twitter:image" content="http://cherishxtt.com/images/upload1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cherishxtt.com/2017/10/11/upload/"/>
+
+
+
+
+
+  <title> vue 上传功能 | cherish </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">cherish</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://cherishxtt.com/2017/10/11/upload/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="cherish">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ooo.0o0.ooo/2017/06/13/593f64899e453.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cherish">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                vue 上传功能
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-11T14:52:41+08:00">
+                2017-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="上传图片"><a href="#上传图片" class="headerlink" title="上传图片"></a>上传图片</h5><p>最近项目改版，里面需要上传功能，原来一直依赖的是webupload，这次因为用的是vue，不想引入过多的插件，所以就使用了formdata来实现上传功能<br>捧上html和vue部分代码，css就略过了。。。</p>
+<p> html部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// 上传按钮</div><div class="line">&lt;form id=&quot;form&quot;&gt;</div><div class="line">   &lt;input type=&quot;file&quot; id=&quot;upload&quot; multiple @change=&quot;uploadFile&quot; style=&quot;display:none&quot;&gt;</div><div class="line">   &lt;label for=&quot;upload&quot; class=&quot;resume&quot;&gt;上传简历&lt;/label&gt;</div><div class="line">&lt;/form&gt;</div><div class="line"></div><div class="line">// 上传文件名称预览</div><div class="line">&lt;template v-for=&quot;(item, index) in resumeName&quot;&gt;</div><div class="line">   &lt;p class=&quot;img-src&quot;&gt;</div><div class="line">      &lt;span class=&quot;img-url&quot;&gt;&#123;&#123;item.state ? item.url : &apos;简历上传中...&apos;&#125;&#125;&lt;/span&gt;</div><div class="line">   &lt;/p&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure></p>
+<p>vue部分<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">data () &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="attr">resume</span>: [],</div><div class="line">      <span class="attr">resumeName</span>: [],</div><div class="line">      <span class="attr">upyun_bucket</span>: <span class="string">''</span>,</div><div class="line">      <span class="attr">policy</span>: <span class="string">''</span>,</div><div class="line">      <span class="attr">signature</span>: <span class="string">''</span></div><div class="line">    &#125;</div><div class="line">&#125;,</div><div class="line"><span class="attr">methods</span>: &#123;</div><div class="line">    <span class="comment">// 上传功能之前要先获取又拍云的签名,这里就不放代码了</span></div><div class="line">    <span class="comment">// 上传</span></div><div class="line">    uploadFile () &#123;</div><div class="line">        <span class="keyword">let</span> that = <span class="keyword">this</span></div><div class="line">        <span class="keyword">let</span> myForm = <span class="built_in">document</span>.getElementById(<span class="string">'form'</span>)</div><div class="line">        <span class="keyword">let</span> _file = <span class="built_in">document</span>.getElementById(<span class="string">'upload'</span>).files</div><div class="line">        <span class="comment">// 上传多张</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; _file.length; i++) &#123;</div><div class="line">            <span class="keyword">let</span> formData = <span class="keyword">new</span> FormData(myForm)</div><div class="line">            <span class="comment">// policy,signature是获取的签名</span></div><div class="line">            formData.append(<span class="string">'policy'</span>, <span class="keyword">this</span>.policy)</div><div class="line">            formData.append(<span class="string">'signature'</span>, <span class="keyword">this</span>.signature)</div><div class="line">            <span class="comment">// 要上传的图片</span></div><div class="line">            formData.append(<span class="string">'file'</span>, _file[i])</div><div class="line">            <span class="keyword">let</span> item = &#123;&#125;</div><div class="line">            <span class="comment">// state判断图片上传的状态</span></div><div class="line">            item.state = <span class="literal">false</span></div><div class="line">            <span class="comment">// 上传的图片名</span></div><div class="line">            item.url = _file[i].name</div><div class="line">            that.resumeName.push(item)</div><div class="line">            <span class="comment">// 要上传的地址，upyun_bucket从后台获取</span></div><div class="line">            <span class="keyword">let</span> url = <span class="string">'http://v0.api.upyun.com/'</span> + <span class="keyword">this</span>.upyun_bucket</div><div class="line">            <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">            xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>) &#123;</div><div class="line">                    <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</div><div class="line">                        <span class="comment">// 上传成功后获取返回的图片地址</span></div><div class="line">                        <span class="keyword">let</span> msg = <span class="built_in">JSON</span>.parse(xhr.responseText)</div><div class="line">                        <span class="keyword">let</span> itemUrl = msg.url</div><div class="line">                        that.resume.push(itemUrl)</div><div class="line">                        item.state = <span class="literal">true</span></div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        <span class="keyword">this</span>.$toast(<span class="string">'上传失败'</span>)</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            xhr.open(<span class="string">'POST'</span>, url)</div><div class="line">            xhr.send(formData)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>最终实现效果：<br><img src="/images/upload1.jpg" alt="" style="width: 200px"><br><img src="/images/upload2.jpg" alt="" style="width: 200px"><br><img src="/images/upload3.jpg" alt="" style="width: 200px"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/23/webpack-loader/" rel="prev" title="webpack-loader">
+                webpack-loader <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ooo.0o0.ooo/2017/06/13/593f64899e453.jpeg"
+               alt="cherish" />
+          <p class="site-author-name" itemprop="name">cherish</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#上传图片"><span class="nav-number">1.</span> <span class="nav-text">上传图片</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cherish</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
