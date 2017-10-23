@@ -87,17 +87,19 @@
 
 
 
-<meta name="description" content="webpack 初探（一）什么是webpack？Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。安装webpack  在你指定的目录下新建一个文件夹  1mkdir webpack-test  npm init初始化该文件夹，输入该命令之后终端会让你输入一系列信息，这些信息无所谓，可写可不写，直接回车就欧啦，初始化之">
+<meta name="description" content="三者之间的区别 cookiejs设置cookie12var userName = cherishdocument.cookie = &quot;name=&quot; + userName js读取cookie1var username = document.cookie.split(&apos;;&apos;)[0].split(&apos;=&apos;)[1] cookie封装1234567891011121314151617181920212223">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack">
-<meta property="og:url" content="http://cherishxtt.com/2017/09/10/webpack/index.html">
+<meta property="og:title" content="cookie，sessionStorage和localStorage整理">
+<meta property="og:url" content="http://cherishxtt.com/2017/10/18/storage/index.html">
 <meta property="og:site_name" content="cherish">
-<meta property="og:description" content="webpack 初探（一）什么是webpack？Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。安装webpack  在你指定的目录下新建一个文件夹  1mkdir webpack-test  npm init初始化该文件夹，输入该命令之后终端会让你输入一系列信息，这些信息无所谓，可写可不写，直接回车就欧啦，初始化之">
-<meta property="og:updated_time" content="2017-09-10T02:22:21.000Z">
+<meta property="og:description" content="三者之间的区别 cookiejs设置cookie12var userName = cherishdocument.cookie = &quot;name=&quot; + userName js读取cookie1var username = document.cookie.split(&apos;;&apos;)[0].split(&apos;=&apos;)[1] cookie封装1234567891011121314151617181920212223">
+<meta property="og:image" content="http://cherishxtt.com/images/storage.jpg">
+<meta property="og:updated_time" content="2017-10-18T04:13:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack">
-<meta name="twitter:description" content="webpack 初探（一）什么是webpack？Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。安装webpack  在你指定的目录下新建一个文件夹  1mkdir webpack-test  npm init初始化该文件夹，输入该命令之后终端会让你输入一系列信息，这些信息无所谓，可写可不写，直接回车就欧啦，初始化之">
+<meta name="twitter:title" content="cookie，sessionStorage和localStorage整理">
+<meta name="twitter:description" content="三者之间的区别 cookiejs设置cookie12var userName = cherishdocument.cookie = &quot;name=&quot; + userName js读取cookie1var username = document.cookie.split(&apos;;&apos;)[0].split(&apos;=&apos;)[1] cookie封装1234567891011121314151617181920212223">
+<meta name="twitter:image" content="http://cherishxtt.com/images/storage.jpg">
 
 
 
@@ -125,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://cherishxtt.com/2017/09/10/webpack/"/>
+  <link rel="canonical" href="http://cherishxtt.com/2017/10/18/storage/"/>
 
 
 
 
 
-  <title> webpack | cherish </title>
+  <title> cookie，sessionStorage和localStorage整理 | cherish </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -240,7 +242,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://cherishxtt.com/2017/09/10/webpack/">
+    <link itemprop="mainEntityOfPage" href="http://cherishxtt.com/2017/10/18/storage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="cherish">
@@ -261,7 +263,7 @@
             
             
               
-                webpack
+                cookie，sessionStorage和localStorage整理
               
             
           </h1>
@@ -276,8 +278,8 @@
               
                 <span class="post-meta-item-text">time</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T10:22:00+08:00">
-                2017-09-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-18T10:41:19+08:00">
+                2017-10-18
               </time>
             
 
@@ -312,27 +314,14 @@
       
 
       
-        <h5 id="webpack-初探（一）"><a href="#webpack-初探（一）" class="headerlink" title="webpack 初探（一）"></a>webpack 初探（一）</h5><p><strong>什么是webpack？</strong><br>Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。<br><strong>安装webpack</strong></p>
-<ul>
-<li><p>在你指定的目录下新建一个文件夹</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir webpack-test</div></pre></td></tr></table></figure>
-</li>
-<li><p>npm init初始化该文件夹，输入该命令之后终端会让你输入一系列信息，这些信息无所谓，可写可不写，直接回车就欧啦，初始化之后可以看到文件夹中多了一个package.json</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd webpack-test </div><div class="line">npm init</div></pre></td></tr></table></figure>
-</li>
-<li><p>接下来就是安装webpack了，webpack有两种安装方式，全局安装和安装到项目目录下，不过官方建议安装到项目目录下，这样有利于项目的维护</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//全局安装</span></div><div class="line">npm install -g webpack</div><div class="line"><span class="comment">//安装到你的项目目录</span></div><div class="line">npm install --save-dev webpack</div></pre></td></tr></table></figure>
-</li>
-<li><p>这样webpack就初步安装好了，接下来可以在项目中新建一些文件夹dist 放我们打包后的文件，src是我们写入的文件，在html文件中引入我们写好的js文件</p>
-</li>
-<li><p>接下来建立webpack配置文件 webpack.config.js</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fileDir = __dirname;</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="comment">// 入口文件</span></div><div class="line">    entry: &#123;</div><div class="line">        <span class="attr">main</span>: <span class="string">'./src/script/main.js'</span>,</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">output</span>: &#123;</div><div class="line">        <span class="comment">// 目标输出目录 path 的绝对路径。</span></div><div class="line">        path: path.resolve(fileDir, <span class="string">'./dist'</span>),</div><div class="line">        <span class="comment">// filename 用于输出文件的文件名</span></div><div class="line">        filename: <span class="string">'bundle.js'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p> 注：“__dirname”是node.js中的一个全局变量，它指向当前执行脚本所在的目录。</p>
-</li>
-<li>执行打包命令  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webpack main.js bundle.js</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>此时就可以在dist里看到你打包好的bundle.js了～</p>
+        <p><strong>三者之间的区别</strong><br><img src="/images/storage.jpg" alt="三种存储方式的区别" style="width: 600px"></p>
+<p><strong>cookie</strong><br>js设置cookie<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> userName = cherish</div><div class="line"><span class="built_in">document</span>.cookie = <span class="string">"name="</span> + userName</div></pre></td></tr></table></figure></p>
+<p>js读取cookie<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> username = <span class="built_in">document</span>.cookie.split(<span class="string">';'</span>)[<span class="number">0</span>].split(<span class="string">'='</span>)[<span class="number">1</span>]</div></pre></td></tr></table></figure></p>
+<p>cookie封装<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cookie = &#123;</div><div class="line">    <span class="attr">set</span>: <span class="function"><span class="keyword">function</span>(<span class="params">name, value, iDay, domain, path</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> oDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">        oDate.setDate(oDate.getDate() + iDay);</div><div class="line">        <span class="built_in">document</span>.cookie = name + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(value === <span class="literal">undefined</span> ? <span class="string">''</span> : value) + <span class="string">'; expires='</span> + oDate + <span class="string">'; domain='</span> + (domain ? domain : <span class="built_in">document</span>.domain) + <span class="string">'; path='</span> + (path ? path : <span class="string">'/'</span>);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">get</span>: <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> arr = <span class="built_in">document</span>.cookie.split(<span class="string">';'</span>);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = arr.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">            <span class="keyword">var</span> arr2 = arr[i].split(<span class="string">'='</span>);</div><div class="line">            <span class="keyword">if</span> (arr2[<span class="number">0</span>] === name) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="built_in">decodeURIComponent</span>(arr2[<span class="number">1</span>]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="string">''</span>;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">remove</span>: <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">        cookie.set(name, <span class="literal">null</span>, <span class="number">-1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">cookie.set(<span class="string">'name'</span>, <span class="string">'cherish'</span>)  <span class="comment">// 设置</span></div><div class="line"><span class="keyword">var</span> userName = cookie.get(<span class="string">'name'</span>)   <span class="comment">// 读取</span></div><div class="line">cookie.remove(<span class="string">'name'</span>)   <span class="comment">// 清除</span></div></pre></td></tr></table></figure></p>
+<p><strong>sessionStorage</strong><br>设置sessionStorage<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> userName = <span class="string">'cherish'</span></div><div class="line">sessionStorage.setItem(<span class="string">'name'</span>, userName);</div><div class="line"></div><div class="line"><span class="comment">// 若存入的值是一个对象</span></div><div class="line"><span class="keyword">var</span> data = &#123;<span class="attr">name</span> : <span class="string">'cherish'</span>, <span class="attr">sex</span>: <span class="string">'girl'</span>&#125;</div><div class="line">sessionStorage.setItem(<span class="string">'info'</span>, <span class="built_in">JSON</span>.stringify(data));</div></pre></td></tr></table></figure></p>
+<p>读取sessionStorage<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sessionStorage.getItem(<span class="string">'name'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 若读取的值是一个对象</span></div><div class="line"><span class="keyword">var</span> _info = <span class="built_in">JSON</span>.parse(sessionStorage.getItem(<span class="string">'info'</span>));</div></pre></td></tr></table></figure></p>
+<p>删除sessionStorage<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 删除指定的sessionStorage</span></div><div class="line">sessionStorage.removeItem(<span class="string">'name'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 删除所有的sessionStorage</span></div><div class="line">sessionStorage.clear();</div></pre></td></tr></table></figure></p>
+<p><strong>localStorage</strong><br>localStorage与sessionStorage用法相同，就不一一列举咯</p>
 
       
     </div>
@@ -369,18 +358,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/23/webpack-loader/" rel="next" title="webpack-loader">
-                <i class="fa fa-chevron-left"></i> webpack-loader
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/02/ajax/" rel="prev" title="ajax">
-                ajax <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/11/cityPicker/" rel="prev" title="mint-ui 实现省市级联">
+                mint-ui 实现省市级联 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -428,17 +413,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://ooo.0o0.ooo/2017/06/13/593f64899e453.jpeg"
@@ -482,22 +458,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#webpack-初探（一）"><span class="nav-number">1.</span> <span class="nav-text">webpack 初探（一）</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
